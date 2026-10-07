@@ -7,6 +7,8 @@ public class GamePanel extends JPanel {
 	Random rand = new Random();
 	// stars
 	int stars = 200;
+	int x = rand.nextInt(getWidth());
+	int y = rand.nextInt(getHeight());
 	
 	public GamePanel() {
 		setBackground(Color.BLACK);
@@ -19,8 +21,6 @@ public class GamePanel extends JPanel {
 		// draw stars
 		g2d.setColor(Color.WHITE);
 		for (int i = 0; i < stars; i++) {
-			int x = rand.nextInt(getWidth());
-			int y = rand.nextInt(getHeight());
 			//draw
 			g2d.fillOval(x, y, 3, 3);
 		}
