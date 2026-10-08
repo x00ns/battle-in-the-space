@@ -2,6 +2,7 @@ import javax.swing.*;
 
 public class WindowInit extends JFrame {
 	public GamePanel gamePanel;
+	private Timer timer;
 	private static final int WIDTH = 800, HEIGHT = 600;
 	//window
 	public WindowInit() {
@@ -13,11 +14,18 @@ public class WindowInit extends JFrame {
 		
 		gamePanel = new GamePanel();
 		
+		timer = new Timer(16, e -> {
+			gamePanel.update();
+			gamePanel.repaint();
+		});
+		
+		timer.start();
+		
 		add(gamePanel);
 		setVisible(true);
 	}
 	
 	public static void main(String[] args) {
-		SwingUtilities.invokeLater(() -> new WindowInit().setVisible(true));
+		SwingUtilities.invokeLater(() -> new WindowInit());
 	}
 }
