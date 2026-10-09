@@ -3,12 +3,13 @@ import java.awt.*;
 import java.util.Random;
 
 public class GamePanel extends JPanel {
-	public static final Font TEXT_FONT = new Font("Serif", Font.PLAIN, 15);
 	private static final int STARS = 200;
 	private int[] starsX = new int[STARS], starsY = new int[STARS];
 	private boolean initialized = false;
 	// Jeikob
 	Jeikob jeikob = new Jeikob();
+	// UI
+	UI ui = new UI();
 	// city
 	City city = new City();
 	// constructor
@@ -69,5 +70,7 @@ public class GamePanel extends JPanel {
 		for (Rectangle l : city.getLadders()) {
 			g2d.fillRect(l.x, l.y, l.width, l.height);
 		}
+		//UI
+		ui.draw(g2d, jeikob);
 	}
 }

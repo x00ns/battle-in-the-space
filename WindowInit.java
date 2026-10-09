@@ -3,7 +3,7 @@ import javax.swing.*;
 public class WindowInit extends JFrame {
 	public GamePanel gamePanel;
 	private Timer timer;
-	private static final int WIDTH = 800, HEIGHT = 600;
+	private static final int WIDTH = 1024, HEIGHT = 600;
 	//window
 	public WindowInit() {
 		setTitle("Battle in the space");

@@ -4,14 +4,15 @@ import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 
 public class Jeikob {
-	private static final double SPEED = 3.5;
+	private static final double SPEED = 4.0;
 	private static final double SCALEX = 50.0, SCALEY = 70.0;
 	private  double x = 100, y = 300;
 	private double vx = 0, vy = 0;
 	private static final double GRAVITY = 0.5, JUMP = -10;
-	private static final double MAX_HP = 100.0;
-	private static final double MIN_HP = 0.0;
+	public static final double MAX_HP = 100.0;
+	public static final double MIN_HP = 0.0;
 	private double hp = 100.0;
+	private double bucks = 0;
 	private boolean left, right, jump;
 	private boolean onLadder;
 	// key pressed
@@ -116,7 +117,9 @@ public class Jeikob {
 	public double getY() { return y; }
 	public double getScaleX() { return SCALEX; }
 	public double getScaleY() { return SCALEY; }
-	// collision getter
+	public double getHp() { return hp; }
+	public double getBucks() { return bucks; }
+	// collision getters
 	public Rectangle getHitbox() {
 		return new Rectangle((int) x, (int) y, (int) SCALEX, (int) SCALEY);
 	}
@@ -127,4 +130,7 @@ public class Jeikob {
 	    }
 	    return null;
 	}
+	// setter
+	public void setHp() { hp = this.hp; }
+	public void setBucks() { bucks = this.bucks; }
 }
