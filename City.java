@@ -4,14 +4,11 @@ import java.util.ArrayList;
 
 public class City {
 	private final ArrayList<Rectangle> platforms = new ArrayList<>();
-	private final ArrayList<Rectangle> ladders = new ArrayList<>();
 	// constructor
 	public City() {
-		platforms.add(new Rectangle(0, 400, 400, 200));
-		platforms.add(new Rectangle(600, 100, 450, 500));
-		ladders.add(new Rectangle(580, 100, 20, 300));
+		platforms.add(new Rectangle(0, -200, 600, 400));
+		platforms.add(new Rectangle(0, 350, 600, 400));
 	}
 	// getter
 	public ArrayList<Rectangle> getPlatforms() { return platforms; }
-	public ArrayList<Rectangle> getLadders() { return ladders; }
 }
